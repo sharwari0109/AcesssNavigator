@@ -19,7 +19,6 @@ import {
 } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { BottomNavigation } from '@/components/BottomNavigation';
-import { Button } from '@/components/ui/Button';
 import {
   accessibilityNeeds,
   mobilityPreferences,
@@ -62,30 +61,30 @@ export function ProfileScreen() {
   ];
 
   return (
-    <div className="min-h-screen bg-ink-50 flex flex-col">
-      <header className="bg-white border-b border-ink-100 px-4 py-3 sticky top-0 z-30">
+    <div className="min-h-screen bg-cream-100 flex flex-col">
+      <header className="bg-white/95 backdrop-blur-lg border-b border-cream-200 px-4 py-3 sticky top-0 z-30">
         <div className="flex items-center gap-3">
           <button
             onClick={goBack}
             aria-label="Go back"
-            className="p-2 -ml-2 rounded-lg text-ink-600 hover:bg-ink-100 transition-colors touch-target"
+            className="p-2 -ml-2 rounded-xl text-ink-600 hover:bg-cream-200 transition-colors touch-target"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <h1 className="text-lg font-bold text-ink-900">Profile & Settings</h1>
+          <h1 className="text-lg font-bold text-navy-900">Profile & Settings</h1>
         </div>
       </header>
 
       <div className="flex-1 px-4 py-4 overflow-y-auto pb-24">
         {/* User card */}
-        <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-5 text-white mb-4">
+        <div className="bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl p-5 text-white mb-4 shadow-card-lg">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center text-2xl font-extrabold border border-white/20">
               {user?.name?.charAt(0).toUpperCase() || 'A'}
             </div>
             <div>
               <h2 className="text-xl font-extrabold">{user?.name || 'Alex Morgan'}</h2>
-              <p className="text-primary-100 text-sm">{user?.email || 'alex@example.com'}</p>
+              <p className="text-primary-50 text-sm">{user?.email || 'alex@example.com'}</p>
             </div>
           </div>
         </div>
@@ -94,10 +93,10 @@ export function ProfileScreen() {
         <section className="mb-5">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center">
-                <Accessibility className="w-4.5 h-4.5 text-primary-600" />
+              <div className="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center">
+                <Accessibility className="w-5 h-5 text-primary-600" />
               </div>
-              <h3 className="font-bold text-ink-900">My Accessibility Needs</h3>
+              <h3 className="font-bold text-navy-900">My Accessibility Needs</h3>
             </div>
             <button
               onClick={() => setEditingNeeds((e) => !e)}
@@ -107,7 +106,7 @@ export function ProfileScreen() {
             </button>
           </div>
 
-          <div className="bg-white rounded-2xl p-4">
+          <div className="bg-white rounded-3xl p-4 border border-cream-200">
             {!editingNeeds ? (
               <div className="flex flex-wrap gap-2">
                 {selectedNeedLabels.length === 0 && selectedPrefLabels.length === 0 ? (
@@ -115,12 +114,12 @@ export function ProfileScreen() {
                 ) : (
                   <>
                     {selectedNeedLabels.map((label) => (
-                      <span key={label} className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-semibold bg-primary-50 text-primary-700">
+                      <span key={label} className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-semibold bg-primary-50 text-primary-700">
                         {label}
                       </span>
                     ))}
                     {selectedPrefLabels.map((label) => (
-                      <span key={label} className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-semibold bg-accent-50 text-accent-700">
+                      <span key={label} className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-semibold bg-accent-50 text-accent-700">
                         {label}
                       </span>
                     ))}
@@ -136,11 +135,11 @@ export function ProfileScreen() {
                     <button
                       key={need.id}
                       onClick={() => toggleNeed(need.id)}
-                      className={`flex items-center gap-3 w-full p-2.5 rounded-lg border-2 transition-all text-left ${
-                        selected ? 'border-primary-500 bg-primary-50' : 'border-ink-200'
+                      className={`flex items-center gap-3 w-full p-3 rounded-2xl border-2 transition-all text-left ${
+                        selected ? 'border-primary-500 bg-primary-50' : 'border-cream-200'
                       }`}
                     >
-                      <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center ${selected ? 'bg-primary-600 border-primary-600' : 'border-ink-300'}`}>
+                      <div className={`w-5 h-5 rounded-lg border-2 flex items-center justify-center ${selected ? 'bg-primary-600 border-primary-600' : 'border-cream-300'}`}>
                         {selected && <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />}
                       </div>
                       <span className="text-sm font-medium text-ink-700">{need.label}</span>
@@ -154,11 +153,11 @@ export function ProfileScreen() {
                     <button
                       key={pref.id}
                       onClick={() => togglePreference(pref.id)}
-                      className={`flex items-center gap-3 w-full p-2.5 rounded-lg border-2 transition-all text-left ${
-                        selected ? 'border-primary-500 bg-primary-50' : 'border-ink-200'
+                      className={`flex items-center gap-3 w-full p-3 rounded-2xl border-2 transition-all text-left ${
+                        selected ? 'border-primary-500 bg-primary-50' : 'border-cream-200'
                       }`}
                     >
-                      <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center ${selected ? 'bg-primary-600 border-primary-600' : 'border-ink-300'}`}>
+                      <div className={`w-5 h-5 rounded-lg border-2 flex items-center justify-center ${selected ? 'bg-primary-600 border-primary-600' : 'border-cream-300'}`}>
                         {selected && <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />}
                       </div>
                       <span className="text-sm font-medium text-ink-700">{pref.label}</span>
@@ -173,19 +172,19 @@ export function ProfileScreen() {
         {/* Navigation Preferences */}
         <section className="mb-5">
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center">
-              <Navigation2 className="w-4.5 h-4.5 text-primary-600" />
+            <div className="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center">
+              <Navigation2 className="w-5 h-5 text-primary-600" />
             </div>
-            <h3 className="font-bold text-ink-900">Navigation Preferences</h3>
+            <h3 className="font-bold text-navy-900">Navigation Preferences</h3>
           </div>
-          <div className="bg-white rounded-2xl divide-y divide-ink-100">
+          <div className="bg-white rounded-3xl divide-y divide-cream-200 border border-cream-200">
             {navPrefs.map((pref, i) => (
               <label key={i} className="flex items-center justify-between p-4 cursor-pointer">
                 <span className="text-sm font-medium text-ink-700">{pref.label}</span>
                 <input
                   type="checkbox"
                   defaultChecked={i === 0}
-                  className="w-5 h-5 rounded-md border-2 border-ink-300 text-primary-600 focus:ring-primary-500"
+                  className="w-5 h-5 rounded-md border-2 border-cream-300 text-primary-600 focus:ring-primary-500"
                 />
               </label>
             ))}
@@ -195,12 +194,12 @@ export function ProfileScreen() {
         {/* App Accessibility */}
         <section className="mb-5">
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center">
-              <Settings className="w-4.5 h-4.5 text-primary-600" />
+            <div className="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center">
+              <Settings className="w-5 h-5 text-primary-600" />
             </div>
-            <h3 className="font-bold text-ink-900">App Accessibility</h3>
+            <h3 className="font-bold text-navy-900">App Accessibility</h3>
           </div>
-          <div className="bg-white rounded-2xl divide-y divide-ink-100">
+          <div className="bg-white rounded-3xl divide-y divide-cream-200 border border-cream-200">
             {appSettings.map((s) => {
               const Icon = s.icon;
               const enabled = settings[s.key];
@@ -208,7 +207,7 @@ export function ProfileScreen() {
                 <label key={s.key} className="flex items-center gap-3 p-4 cursor-pointer">
                   <Icon className="w-5 h-5 text-ink-500 shrink-0" />
                   <div className="flex-1">
-                    <p className="text-sm font-semibold text-ink-900">{s.label}</p>
+                    <p className="text-sm font-semibold text-navy-900">{s.label}</p>
                     <p className="text-xs text-ink-500">{s.desc}</p>
                   </div>
                   <button
@@ -217,7 +216,7 @@ export function ProfileScreen() {
                     aria-checked={enabled}
                     aria-label={s.label}
                     onClick={() => updateSetting(s.key, !enabled)}
-                    className={`relative w-11 h-6 rounded-full transition-colors shrink-0 ${enabled ? 'bg-primary-600' : 'bg-ink-300'}`}
+                    className={`relative w-11 h-6 rounded-full transition-colors shrink-0 ${enabled ? 'bg-primary-600' : 'bg-cream-300'}`}
                   >
                     <span className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow-sm transition-transform ${enabled ? 'translate-x-5' : 'translate-x-0'}`} />
                   </button>
@@ -230,19 +229,19 @@ export function ProfileScreen() {
         {/* Account */}
         <section className="mb-5">
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center">
-              <Shield className="w-4.5 h-4.5 text-primary-600" />
+            <div className="w-9 h-9 rounded-xl bg-primary-50 flex items-center justify-center">
+              <Shield className="w-5 h-5 text-primary-600" />
             </div>
-            <h3 className="font-bold text-ink-900">Account</h3>
+            <h3 className="font-bold text-navy-900">Account</h3>
           </div>
-          <div className="bg-white rounded-2xl divide-y divide-ink-100">
+          <div className="bg-white rounded-3xl divide-y divide-cream-200 border border-cream-200">
             {accountItems.map((item, i) => {
               const Icon = item.icon;
               return (
                 <button
                   key={i}
                   onClick={item.action}
-                  className="w-full flex items-center gap-3 p-4 hover:bg-ink-50 transition-colors text-left"
+                  className="w-full flex items-center gap-3 p-4 hover:bg-cream-50 transition-colors text-left"
                 >
                   <Icon className="w-5 h-5 text-ink-500" />
                   <span className="flex-1 text-sm font-medium text-ink-700">{item.label}</span>

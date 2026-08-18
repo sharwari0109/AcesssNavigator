@@ -42,21 +42,21 @@ export function Modal({ open, onClose, title, children, size = 'md', hideClose }
       aria-label={title || 'Dialog'}
     >
       <div
-        className="absolute inset-0 bg-ink-950/50 backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0 bg-navy-950/40 backdrop-blur-sm animate-fade-in"
         onClick={onClose}
         aria-hidden="true"
       />
       <div
-        className={`relative w-full ${sizeClasses[size]} bg-white rounded-t-3xl sm:rounded-3xl shadow-card-lg animate-slide-up max-h-[92vh] flex flex-col overflow-hidden`}
+        className={`relative w-full ${sizeClasses[size]} bg-white rounded-t-4xl sm:rounded-4xl shadow-card-lg animate-slide-up max-h-[92vh] flex flex-col overflow-hidden`}
       >
         {(title || !hideClose) && (
-          <div className="flex items-center justify-between px-5 py-4 border-b border-ink-100 shrink-0">
-            <h2 className="text-lg font-bold text-ink-900">{title}</h2>
+          <div className="flex items-center justify-between px-5 py-4 border-b border-cream-200 shrink-0">
+            <h2 className="text-lg font-bold text-navy-900">{title}</h2>
             {!hideClose && (
               <button
                 onClick={onClose}
                 aria-label="Close dialog"
-                className="p-2 -mr-2 rounded-lg text-ink-500 hover:text-ink-900 hover:bg-ink-100 transition-colors touch-target"
+                className="p-2 -mr-2 rounded-xl text-ink-500 hover:text-navy-900 hover:bg-cream-200 transition-colors touch-target"
               >
                 <X className="w-5 h-5" />
               </button>

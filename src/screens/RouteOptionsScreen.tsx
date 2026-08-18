@@ -21,19 +21,19 @@ export function RouteOptionsScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-50 flex flex-col">
-      <header className="bg-white border-b border-ink-100 px-4 py-3 sticky top-0 z-30">
+    <div className="min-h-screen bg-cream-100 flex flex-col">
+      <header className="bg-white/95 backdrop-blur-lg border-b border-cream-200 px-4 py-3 sticky top-0 z-30">
         <div className="flex items-center gap-3">
           <button
             onClick={goBack}
             aria-label="Go back"
-            className="p-2 -ml-2 rounded-lg text-ink-600 hover:bg-ink-100 transition-colors touch-target"
+            className="p-2 -ml-2 rounded-xl text-ink-600 hover:bg-cream-200 transition-colors touch-target"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
           <div className="flex-1 min-w-0">
             <p className="text-2xs font-semibold text-ink-500">Route to</p>
-            <h1 className="text-base font-bold text-ink-900 truncate">
+            <h1 className="text-base font-bold text-navy-900 truncate">
               {selectedLocation?.name || 'Destination'}
             </h1>
           </div>
@@ -51,10 +51,10 @@ export function RouteOptionsScreen() {
               key={f.id}
               onClick={() => setSelectedFilter(f.id)}
               aria-pressed={selectedFilter === f.id}
-              className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 selectedFilter === f.id
                   ? 'bg-primary-600 text-white'
-                  : 'bg-white text-ink-600 border-2 border-ink-200 hover:border-ink-300'
+                  : 'bg-white text-ink-600 border-2 border-cream-200 hover:border-primary-300'
               }`}
             >
               {f.label}
@@ -73,7 +73,7 @@ export function RouteOptionsScreen() {
           ))}
         </div>
 
-        <div className="mt-6 bg-primary-50 rounded-2xl p-4 flex items-start gap-3">
+        <div className="mt-6 bg-primary-50 rounded-3xl p-4 flex items-start gap-3 border border-primary-100">
           <MapPin className="w-5 h-5 text-primary-600 shrink-0 mt-0.5" />
           <div>
             <p className="font-semibold text-primary-900 text-sm">Route preferences</p>

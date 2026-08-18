@@ -30,15 +30,15 @@ export function WelcomeScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-50 flex flex-col">
-      <div className="bg-gradient-to-br from-primary-700 to-primary-900 px-6 pt-16 pb-12 rounded-b-[2.5rem]">
+    <div className="min-h-screen bg-cream-100 flex flex-col">
+      <div className="bg-gradient-to-br from-primary-600 to-primary-800 px-6 pt-16 pb-12 rounded-b-[2.5rem]">
         <div className="flex items-center gap-3 mb-8">
-          <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+          <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center border border-white/20">
             <Navigation2 className="w-8 h-8 text-white" strokeWidth={2.5} />
           </div>
           <div>
             <h1 className="text-2xl font-extrabold text-white">AccessNav</h1>
-            <p className="text-primary-200 text-sm">AI Accessibility Navigator</p>
+            <p className="text-primary-100 text-sm">AI Accessibility Navigator</p>
           </div>
         </div>
 
@@ -49,7 +49,7 @@ export function WelcomeScreen() {
       </div>
 
       <div className="flex-1 px-6 py-8 -mt-6">
-        <div className="bg-white rounded-2xl shadow-card-lg p-6">
+        <div className="bg-white rounded-3xl shadow-card-lg p-6 border border-cream-200">
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               label="Email"
@@ -80,7 +80,7 @@ export function WelcomeScreen() {
                   type="checkbox"
                   checked={remember}
                   onChange={(e) => setRemember(e.target.checked)}
-                  className="w-5 h-5 rounded-md border-2 border-ink-300 text-primary-600 focus:ring-primary-500"
+                  className="w-5 h-5 rounded-md border-2 border-cream-300 text-primary-600 focus:ring-primary-500"
                 />
                 <span className="text-sm font-medium text-ink-700">Remember me</span>
               </label>
@@ -99,9 +99,9 @@ export function WelcomeScreen() {
           </form>
 
           <div className="flex items-center gap-3 my-5">
-            <div className="flex-1 h-px bg-ink-200" />
+            <div className="flex-1 h-px bg-cream-300" />
             <span className="text-xs font-semibold text-ink-400 uppercase">or</span>
-            <div className="flex-1 h-px bg-ink-200" />
+            <div className="flex-1 h-px bg-cream-300" />
           </div>
 
           <Button

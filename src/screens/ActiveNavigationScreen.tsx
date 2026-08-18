@@ -55,22 +55,22 @@ export function ActiveNavigationScreen() {
   const Icon = iconMap[instruction.icon] || ArrowUp;
 
   return (
-    <div className="min-h-screen bg-ink-50 flex flex-col">
-      <header className="bg-white border-b border-ink-100 px-4 py-2.5 flex items-center gap-3 sticky top-0 z-30">
+    <div className="min-h-screen bg-cream-100 flex flex-col">
+      <header className="bg-white/95 backdrop-blur-lg border-b border-cream-200 px-4 py-2.5 flex items-center gap-3 sticky top-0 z-30">
         <button
           onClick={goBack}
           aria-label="Exit navigation"
-          className="p-2 -ml-2 rounded-lg text-ink-600 hover:bg-ink-100 transition-colors touch-target"
+          className="p-2 -ml-2 rounded-xl text-ink-600 hover:bg-cream-200 transition-colors touch-target"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div className="flex-1 min-w-0">
           <p className="text-2xs font-semibold text-ink-500">Navigating to</p>
-          <h1 className="text-sm font-bold text-ink-900 truncate">
+          <h1 className="text-sm font-bold text-navy-900 truncate">
             {selectedLocation?.name || 'Destination'}
           </h1>
         </div>
-        <div className="flex items-center gap-1.5 bg-primary-50 px-3 py-1.5 rounded-lg">
+        <div className="flex items-center gap-1.5 bg-primary-50 px-3 py-1.5 rounded-xl">
           <span className="text-sm font-bold text-primary-700">
             {selectedRoute?.duration || '12 min'}
           </span>
@@ -87,7 +87,7 @@ export function ActiveNavigationScreen() {
         </div>
 
         {/* Progress bar on map */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-ink-200 z-20">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-cream-300 z-20">
           <div
             className="h-full bg-primary-600 transition-all duration-200"
             style={{ width: `${progress}%` }}
@@ -96,14 +96,14 @@ export function ActiveNavigationScreen() {
       </div>
 
       {/* Navigation instruction card */}
-      <div className="bg-white rounded-t-3xl shadow-card-lg -mt-6 relative z-20 pb-20">
+      <div className="bg-white rounded-t-4xl shadow-card-lg -mt-6 relative z-20 pb-20 border-t border-cream-200">
         <div className="px-5 pt-4 pb-4">
-          <div className="w-10 h-1.5 bg-ink-200 rounded-full mx-auto mb-4" />
+          <div className="w-10 h-1.5 bg-cream-300 rounded-full mx-auto mb-4" />
 
           {/* Current instruction */}
-          <div className="bg-primary-600 rounded-2xl p-4 text-white mb-4">
+          <div className="bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl p-4 text-white mb-4 shadow-card">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
                 <Icon className="w-7 h-7" strokeWidth={2.5} />
               </div>
               <div className="flex-1">
@@ -120,7 +120,7 @@ export function ActiveNavigationScreen() {
           </div>
 
           {/* Accessibility info card */}
-          <div className="bg-accent-50 border-2 border-accent-200 rounded-2xl p-4 mb-4">
+          <div className="bg-accent-50 border-2 border-accent-200 rounded-3xl p-4 mb-4">
             <div className="flex items-center gap-2 mb-3">
               <Accessibility className="w-5 h-5 text-accent-700" />
               <h3 className="font-bold text-accent-900">Accessibility</h3>
@@ -146,7 +146,7 @@ export function ActiveNavigationScreen() {
             {navigationInstructions.slice(currentStep + 1, currentStep + 3).map((step) => {
               const StepIcon = iconMap[step.icon] || ArrowUp;
               return (
-                <div key={step.id} className="flex items-center gap-3 p-3 rounded-xl bg-ink-50">
+                <div key={step.id} className="flex items-center gap-3 p-3 rounded-2xl bg-cream-50">
                   <StepIcon className="w-5 h-5 text-ink-400" />
                   <div className="flex-1">
                     <p className="text-sm font-medium text-ink-700">{step.text}</p>
@@ -197,7 +197,7 @@ export function ActiveNavigationScreen() {
           </div>
 
           {progress >= 100 && (
-            <div className="mt-4 bg-success-50 border-2 border-success-200 rounded-2xl p-4 text-center animate-bounce-soft">
+            <div className="mt-4 bg-success-50 border-2 border-success-200 rounded-3xl p-4 text-center animate-bounce-soft">
               <MapPin className="w-10 h-10 text-success-600 mx-auto mb-2" />
               <p className="font-bold text-success-800 text-lg">You've arrived!</p>
               <p className="text-sm text-success-700 mt-1">

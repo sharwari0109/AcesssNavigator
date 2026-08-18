@@ -19,13 +19,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label htmlFor={inputId} className="block text-sm font-semibold text-ink-700 mb-1.5">
+          <label htmlFor={inputId} className="block text-sm font-semibold text-navy-800 mb-1.5">
             {label}
           </label>
         )}
         <div className="relative">
           {leftIcon && (
-            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-400 pointer-events-none">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-primary-500 pointer-events-none">
               {leftIcon}
             </span>
           )}
@@ -35,7 +35,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             type={inputType}
             aria-invalid={!!error}
             aria-describedby={error ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined}
-            className={`w-full px-4 py-3 text-base bg-white border-2 rounded-xl text-ink-900 placeholder:text-ink-400 transition-all duration-200 touch-target ${leftIcon ? 'pl-11' : ''} ${isPassword ? 'pr-12' : ''} ${error ? 'border-danger-400 focus:border-danger-500 focus:ring-danger-500' : 'border-ink-200 focus:border-primary-500 focus:ring-primary-500'} ${className}`}
+            className={`w-full px-4 py-3.5 text-base bg-white border-2 rounded-2xl text-ink-900 placeholder:text-ink-400 transition-all duration-200 touch-target ${leftIcon ? 'pl-12' : ''} ${isPassword ? 'pr-12' : ''} ${error ? 'border-danger-400 focus:border-danger-500 focus:ring-danger-500' : 'border-cream-300 focus:border-primary-500 focus:ring-primary-200'} ${className}`}
             {...props}
           />
           {isPassword && (
@@ -43,7 +43,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               type="button"
               onClick={() => setShowPassword((s) => !s)}
               aria-label={showPassword ? 'Hide password' : 'Show password'}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-ink-400 hover:text-ink-600 p-1 rounded-md transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-ink-400 hover:text-primary-600 p-1 rounded-lg transition-colors"
             >
               {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
             </button>

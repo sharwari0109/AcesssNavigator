@@ -24,17 +24,17 @@ export function SearchScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-50 flex flex-col">
-      <header className="bg-white border-b border-ink-100 px-4 py-3 sticky top-0 z-30">
+    <div className="min-h-screen bg-cream-100 flex flex-col">
+      <header className="bg-white/95 backdrop-blur-lg border-b border-cream-200 px-4 py-3 sticky top-0 z-30">
         <div className="flex items-center gap-3 mb-3">
           <button
             onClick={goBack}
             aria-label="Go back"
-            className="p-2 -ml-2 rounded-lg text-ink-600 hover:bg-ink-100 transition-colors touch-target"
+            className="p-2 -ml-2 rounded-xl text-ink-600 hover:bg-cream-200 transition-colors touch-target"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <h1 className="text-lg font-bold text-ink-900">Search Destination</h1>
+          <h1 className="text-lg font-bold text-navy-900">Search Destination</h1>
         </div>
         <SearchBar
           value={query}
@@ -55,9 +55,9 @@ export function SearchScreen() {
                 <button
                   key={i}
                   onClick={() => setQuery(search)}
-                  className="w-full flex items-center gap-3 p-3 rounded-xl bg-white border-2 border-ink-200 hover:border-primary-300 transition-colors text-left"
+                  className="w-full flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-cream-200 hover:border-primary-300 transition-colors text-left"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-ink-100 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-xl bg-cream-100 flex items-center justify-center">
                     <Clock className="w-4.5 h-4.5 text-ink-500" />
                   </div>
                   <span className="font-medium text-ink-700 text-sm">{search}</span>
@@ -73,10 +73,10 @@ export function SearchScreen() {
 
         {filtered.length === 0 ? (
           <div className="text-center py-12">
-            <div className="w-16 h-16 rounded-full bg-ink-100 flex items-center justify-center mx-auto mb-3">
+            <div className="w-16 h-16 rounded-full bg-cream-200 flex items-center justify-center mx-auto mb-3">
               <MapPin className="w-8 h-8 text-ink-400" />
             </div>
-            <p className="font-semibold text-ink-700">No places found</p>
+            <p className="font-semibold text-navy-800">No places found</p>
             <p className="text-sm text-ink-500 mt-1">Try a different search term</p>
           </div>
         ) : (

@@ -25,7 +25,7 @@ export function BottomNavigation() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-ink-200 px-2 pb-[env(safe-area-inset-bottom)]"
+      className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-cream-200 px-2 pb-[env(safe-area-inset-bottom)]"
       aria-label="Main navigation"
     >
       <div className="flex items-center justify-around max-w-2xl mx-auto h-16">
@@ -38,7 +38,7 @@ export function BottomNavigation() {
               onClick={() => handleTab(tab.id)}
               aria-label={tab.label}
               aria-current={active ? 'page' : undefined}
-              className={`flex flex-col items-center justify-center gap-1 px-3 py-1.5 rounded-xl transition-colors touch-target ${active ? 'text-primary-600' : 'text-ink-500 hover:text-ink-700'}`}
+              className={`flex flex-col items-center justify-center gap-1 px-3 py-1.5 rounded-2xl transition-all touch-target ${active ? 'text-primary-600 bg-primary-50' : 'text-ink-500 hover:text-ink-700'}`}
             >
               <Icon className="w-6 h-6" strokeWidth={active ? 2.5 : 2} />
               <span className="text-2xs font-semibold">{tab.label}</span>
@@ -59,7 +59,7 @@ export function BottomNavigation() {
               onClick={() => handleTab(tab.id)}
               aria-label={tab.label}
               aria-current={active ? 'page' : undefined}
-              className={`flex flex-col items-center justify-center gap-1 px-3 py-1.5 rounded-xl transition-colors touch-target ${active ? 'text-primary-600' : 'text-ink-500 hover:text-ink-700'}`}
+              className={`flex flex-col items-center justify-center gap-1 px-3 py-1.5 rounded-2xl transition-all touch-target ${active ? 'text-primary-600 bg-primary-50' : 'text-ink-500 hover:text-ink-700'}`}
             >
               <Icon className="w-6 h-6" strokeWidth={active ? 2.5 : 2} />
               <span className="text-2xs font-semibold">{tab.label}</span>

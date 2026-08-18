@@ -10,20 +10,20 @@ export function AccessibilityScore({
   size?: 'sm' | 'md' | 'lg';
 }) {
   const color =
-    score >= 85 ? 'text-success-600 bg-success-50 border-success-200'
-    : score >= 70 ? 'text-warning-600 bg-warning-50 border-warning-200'
-    : 'text-danger-600 bg-danger-50 border-danger-200';
+    score >= 85 ? 'text-success-700 bg-success-50 border-success-200'
+    : score >= 70 ? 'text-warning-700 bg-warning-50 border-warning-200'
+    : 'text-danger-700 bg-danger-50 border-danger-200';
 
   const sizeClasses = {
-    sm: 'w-12 h-12 text-base',
-    md: 'w-16 h-16 text-xl',
-    lg: 'w-24 h-24 text-3xl',
+    sm: 'w-14 h-14 text-lg rounded-2xl',
+    md: 'w-18 h-18 text-2xl rounded-3xl',
+    lg: 'w-24 h-24 text-3xl rounded-3xl',
   };
 
   return (
-    <div className="flex flex-col items-center gap-1">
+    <div className="flex flex-col items-center gap-1.5">
       <div
-        className={`flex flex-col items-center justify-center rounded-2xl border-2 ${color} ${sizeClasses[size]} font-extrabold`}
+        className={`flex flex-col items-center justify-center border-2 ${color} ${sizeClasses[size]} font-extrabold`}
       >
         {score}
       </div>

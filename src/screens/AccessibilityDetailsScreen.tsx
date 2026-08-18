@@ -7,25 +7,25 @@ import { BottomNavigation } from '@/components/BottomNavigation';
 import { accessibilityDetails } from '@/data/mockData';
 
 export function AccessibilityDetailsScreen() {
-  const { selectedLocation, navigate, goBack, showToast } = useApp();
+  const { selectedLocation, navigate, goBack } = useApp();
 
   const score = selectedLocation?.accessibilityScore || 92;
   const label = selectedLocation?.accessibilityLabel || 'Highly Accessible';
 
   return (
-    <div className="min-h-screen bg-ink-50 flex flex-col">
-      <header className="bg-white border-b border-ink-100 px-4 py-3 sticky top-0 z-30">
+    <div className="min-h-screen bg-cream-100 flex flex-col">
+      <header className="bg-white/95 backdrop-blur-lg border-b border-cream-200 px-4 py-3 sticky top-0 z-30">
         <div className="flex items-center gap-3">
           <button
             onClick={goBack}
             aria-label="Go back"
-            className="p-2 -ml-2 rounded-lg text-ink-600 hover:bg-ink-100 transition-colors touch-target"
+            className="p-2 -ml-2 rounded-xl text-ink-600 hover:bg-cream-200 transition-colors touch-target"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
           <div className="flex-1 min-w-0">
             <p className="text-2xs font-semibold text-ink-500">Accessibility Details</p>
-            <h1 className="text-base font-bold text-ink-900 truncate">
+            <h1 className="text-base font-bold text-navy-900 truncate">
               {selectedLocation?.name || 'Location'}
             </h1>
           </div>
@@ -34,11 +34,11 @@ export function AccessibilityDetailsScreen() {
 
       <div className="flex-1 px-4 py-4 overflow-y-auto pb-24">
         {/* Score card */}
-        <div className="bg-white rounded-2xl shadow-card p-5 mb-4">
+        <div className="bg-white rounded-3xl shadow-card p-5 mb-4 border border-cream-200">
           <div className="flex items-center gap-4">
             <AccessibilityScore score={score} size="lg" />
             <div className="flex-1">
-              <h2 className="text-xl font-extrabold text-ink-900">{label}</h2>
+              <h2 className="text-xl font-extrabold text-navy-900">{label}</h2>
               <div className="flex items-center gap-1.5 mt-1 text-sm text-ink-500">
                 <Clock className="w-4 h-4" />
                 Last verified 2 hours ago
@@ -61,7 +61,7 @@ export function AccessibilityDetailsScreen() {
         </div>
 
         {/* Report outdated */}
-        <div className="bg-warning-50 border-2 border-warning-200 rounded-2xl p-4 mb-4">
+        <div className="bg-warning-50 border-2 border-warning-200 rounded-3xl p-4 mb-4">
           <div className="flex items-start gap-3">
             <Flag className="w-5 h-5 text-warning-600 shrink-0 mt-0.5" />
             <div className="flex-1">
@@ -85,12 +85,12 @@ export function AccessibilityDetailsScreen() {
         </div>
 
         {/* Overall summary */}
-        <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-5 text-white">
+        <div className="bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl p-5 text-white shadow-card-lg">
           <div className="flex items-center gap-2 mb-2">
             <Accessibility className="w-5 h-5" />
             <h3 className="font-bold">Overall Assessment</h3>
           </div>
-          <p className="text-primary-100 text-sm leading-relaxed">
+          <p className="text-primary-50 text-sm leading-relaxed">
             This location is {label.toLowerCase()} with step-free entrance, ramps, and elevators available. Minor sidewalk narrowing reported for 100 m. Construction 200 m ahead — plan accordingly.
           </p>
         </div>

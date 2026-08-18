@@ -21,14 +21,14 @@ export function ToastContainer() {
           <div
             key={toast.id}
             role="alert"
-            className={`flex items-start gap-3 p-3.5 rounded-xl border-2 ${c.bg} ${c.border} shadow-card-lg animate-slide-down pointer-events-auto`}
+            className={`flex items-start gap-3 p-4 rounded-2xl border-2 ${c.bg} ${c.border} shadow-card-lg animate-slide-down pointer-events-auto`}
           >
             <Icon className={`w-5 h-5 shrink-0 mt-0.5 ${c.iconColor}`} />
             <p className={`flex-1 text-sm font-medium ${c.text}`}>{toast.message}</p>
             <button
               onClick={() => dismissToast(toast.id)}
               aria-label="Dismiss notification"
-              className="p-1 -mt-1 -mr-1 rounded-md text-ink-400 hover:text-ink-700 transition-colors"
+              className="p-1 -mt-1 -mr-1 rounded-lg text-ink-400 hover:text-ink-700 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>

@@ -7,7 +7,7 @@ export function StarRating({ rating, size = 14 }: { rating: number; size?: numbe
         <Star
           key={i}
           style={{ width: size, height: size }}
-          className={i <= rating ? 'fill-warning-400 text-warning-400' : 'text-ink-300'}
+          className={i <= rating ? 'fill-warning-400 text-warning-400' : 'text-cream-300'}
         />
       ))}
     </div>

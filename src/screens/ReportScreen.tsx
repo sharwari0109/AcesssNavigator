@@ -53,12 +53,12 @@ export function ReportScreen() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-ink-50 flex flex-col items-center justify-center px-6">
-        <div className="bg-white rounded-3xl shadow-card-lg p-8 max-w-sm w-full text-center animate-scale-in">
+      <div className="min-h-screen bg-cream-100 flex flex-col items-center justify-center px-6">
+        <div className="bg-white rounded-3xl shadow-card-lg p-8 max-w-sm w-full text-center animate-scale-in border border-cream-200">
           <div className="w-20 h-20 rounded-full bg-success-100 flex items-center justify-center mx-auto mb-4">
             <CheckCircle2 className="w-12 h-12 text-success-600" strokeWidth={2} />
           </div>
-          <h2 className="text-xl font-extrabold text-ink-900 mb-2">Report Submitted!</h2>
+          <h2 className="text-xl font-extrabold text-navy-900 mb-2">Report Submitted!</h2>
           <p className="text-ink-500 text-sm mb-6">
             Thank you! Your report helps make navigation safer for everyone.
           </p>
@@ -78,23 +78,23 @@ export function ReportScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-50 flex flex-col">
-      <header className="bg-white border-b border-ink-100 px-4 py-3 sticky top-0 z-30">
+    <div className="min-h-screen bg-cream-100 flex flex-col">
+      <header className="bg-white/95 backdrop-blur-lg border-b border-cream-200 px-4 py-3 sticky top-0 z-30">
         <div className="flex items-center gap-3">
           <button
             onClick={goBack}
             aria-label="Go back"
-            className="p-2 -ml-2 rounded-lg text-ink-600 hover:bg-ink-100 transition-colors touch-target"
+            className="p-2 -ml-2 rounded-xl text-ink-600 hover:bg-cream-200 transition-colors touch-target"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <h1 className="text-lg font-bold text-ink-900">Report an accessibility issue</h1>
+          <h1 className="text-lg font-bold text-navy-900">Report an accessibility issue</h1>
         </div>
       </header>
 
       <form onSubmit={handleSubmit} className="flex-1 px-4 py-4 overflow-y-auto pb-32">
         <fieldset className="mb-5">
-          <legend className="text-sm font-bold text-ink-700 mb-3">Issue type</legend>
+          <legend className="text-sm font-bold text-navy-800 mb-3">Issue type</legend>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
             {reportIssueTypes.map((type) => {
               const Icon = iconMap[type.icon] || Camera;
@@ -105,10 +105,10 @@ export function ReportScreen() {
                   type="button"
                   onClick={() => setIssueType(type.id)}
                   aria-pressed={selected}
-                  className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all touch-target ${
+                  className={`flex flex-col items-center gap-1.5 p-3.5 rounded-2xl border-2 transition-all touch-target ${
                     selected
                       ? 'border-primary-500 bg-primary-50 ring-1 ring-primary-200'
-                      : 'border-ink-200 bg-white hover:border-ink-300'
+                      : 'border-cream-200 bg-white hover:border-primary-300'
                   }`}
                 >
                   <Icon className={`w-5 h-5 ${selected ? 'text-primary-600' : 'text-ink-500'}`} />
@@ -122,7 +122,7 @@ export function ReportScreen() {
         </fieldset>
 
         <div className="mb-5">
-          <label htmlFor="description" className="block text-sm font-bold text-ink-700 mb-2">
+          <label htmlFor="description" className="block text-sm font-bold text-navy-800 mb-2">
             Description
           </label>
           <textarea
@@ -131,18 +131,18 @@ export function ReportScreen() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Describe the issue in detail…"
             rows={4}
-            className="w-full px-4 py-3 text-base bg-white border-2 border-ink-200 rounded-xl text-ink-900 placeholder:text-ink-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all resize-none"
+            className="w-full px-4 py-3 text-base bg-white border-2 border-cream-300 rounded-2xl text-ink-900 placeholder:text-ink-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all resize-none"
           />
         </div>
 
         <div className="mb-5">
-          <label className="block text-sm font-bold text-ink-700 mb-2">Photo (optional)</label>
+          <label className="block text-sm font-bold text-navy-800 mb-2">Photo (optional)</label>
           <button
             type="button"
             onClick={() => showToast('Photo upload is simulated in this prototype', 'info')}
-            className="w-full flex flex-col items-center gap-2 p-6 rounded-xl border-2 border-dashed border-ink-300 hover:border-primary-400 hover:bg-primary-50/50 transition-colors"
+            className="w-full flex flex-col items-center gap-2 p-6 rounded-2xl border-2 border-dashed border-cream-300 hover:border-primary-400 hover:bg-primary-50/50 transition-colors"
           >
-            <div className="w-12 h-12 rounded-full bg-ink-100 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-cream-100 flex items-center justify-center">
               <Camera className="w-6 h-6 text-ink-500" />
             </div>
             <p className="text-sm font-semibold text-ink-600">Tap to add a photo</p>
@@ -161,7 +161,7 @@ export function ReportScreen() {
         </div>
 
         <fieldset className="mb-6">
-          <legend className="text-sm font-bold text-ink-700 mb-2">Severity</legend>
+          <legend className="text-sm font-bold text-navy-800 mb-2">Severity</legend>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
             {severityLevels.map((level) => {
               const selected = severity === level.id;
@@ -171,10 +171,10 @@ export function ReportScreen() {
                   type="button"
                   onClick={() => setSeverity(level.id)}
                   aria-pressed={selected}
-                  className={`py-2.5 rounded-xl border-2 font-bold text-sm transition-all touch-target ${
+                  className={`py-2.5 rounded-2xl border-2 font-bold text-sm transition-all touch-target ${
                     selected
                       ? severityColors[level.id]
-                      : 'border-ink-200 bg-white text-ink-600 hover:border-ink-300'
+                      : 'border-cream-200 bg-white text-ink-600 hover:border-primary-300'
                   }`}
                 >
                   {level.label}

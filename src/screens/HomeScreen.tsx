@@ -27,16 +27,16 @@ export function HomeScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-50 flex flex-col">
+    <div className="min-h-screen bg-cream-100 flex flex-col">
       {/* Header */}
-      <header className="bg-white border-b border-ink-100 px-4 py-3 flex items-center justify-between sticky top-0 z-30">
+      <header className="bg-white/95 backdrop-blur-lg border-b border-cream-200 px-4 py-3 flex items-center justify-between sticky top-0 z-30">
         <div className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-soft">
             <Accessibility className="w-5 h-5 text-white" />
           </div>
           <div>
             <p className="text-2xs font-semibold text-ink-500">Current Location</p>
-            <p className="text-sm font-bold text-ink-900 flex items-center gap-1">
+            <p className="text-sm font-bold text-navy-900 flex items-center gap-1">
               <MapPin className="w-3.5 h-3.5 text-primary-600" />
               Bandra West, Mumbai
             </p>
@@ -46,7 +46,7 @@ export function HomeScreen() {
           <button
             onClick={() => showToast('No new notifications', 'info')}
             aria-label="Notifications"
-            className="relative p-2 rounded-xl text-ink-600 hover:bg-ink-100 transition-colors touch-target"
+            className="relative p-2 rounded-xl text-ink-600 hover:bg-cream-200 transition-colors touch-target"
           >
             <Bell className="w-5 h-5" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-danger-500" />
@@ -72,11 +72,11 @@ export function HomeScreen() {
       </div>
 
       {/* Bottom sheet */}
-      <div className="bg-white rounded-t-3xl shadow-card-lg -mt-6 relative z-20 pb-20">
+      <div className="bg-white rounded-t-4xl shadow-card-lg -mt-6 relative z-20 pb-20 border-t border-cream-200">
         <div className="px-5 pt-3 pb-5">
-          <div className="w-10 h-1.5 bg-ink-200 rounded-full mx-auto mb-4" />
+          <div className="w-10 h-1.5 bg-cream-300 rounded-full mx-auto mb-4" />
 
-          <h2 className="text-xl font-extrabold text-ink-900 mb-3">Where do you want to go?</h2>
+          <h2 className="text-xl font-extrabold text-navy-900 mb-3">Where do you want to go?</h2>
 
           <SearchBar
             value={search}
@@ -92,9 +92,9 @@ export function HomeScreen() {
                 <button
                   key={dest.id}
                   onClick={() => handleQuickDest(dest.id)}
-                  className="flex flex-col items-center gap-1.5 shrink-0 w-20 p-3 rounded-2xl bg-ink-50 hover:bg-primary-50 transition-colors touch-target"
+                  className="flex flex-col items-center gap-1.5 shrink-0 w-20 p-3 rounded-2xl bg-cream-50 hover:bg-primary-50 transition-colors touch-target"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-card">
+                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-soft">
                     <Icon className="w-5 h-5 text-primary-600" />
                   </div>
                   <span className="text-xs font-semibold text-ink-700">{dest.label}</span>
@@ -118,7 +118,7 @@ export function HomeScreen() {
                 <MapPin className="w-5 h-5 text-white" />
               </div>
               <div className="text-left">
-                <p className="font-bold text-ink-900">Explore nearby places</p>
+                <p className="font-bold text-navy-900">Explore nearby places</p>
                 <p className="text-sm text-ink-500">Find accessible destinations</p>
               </div>
             </div>

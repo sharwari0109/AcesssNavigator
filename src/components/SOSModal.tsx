@@ -76,7 +76,7 @@ export function SOSModal() {
         <button
           onClick={handleClose}
           aria-label="Close SOS"
-          className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors touch-target"
+          className="p-2 rounded-xl text-white/80 hover:text-white hover:bg-white/10 transition-colors touch-target"
         >
           <X className="w-6 h-6" />
         </button>
@@ -127,7 +127,7 @@ export function SOSModal() {
               <p className="text-danger-200">Emergency assistance is ready</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-4 mb-4">
+            <div className="bg-white rounded-3xl p-4 mb-4 shadow-card-lg">
               <div className="flex items-center gap-2 text-ink-700 mb-2">
                 <MapPin className="w-5 h-5 text-primary-600" />
                 <div>
@@ -141,39 +141,39 @@ export function SOSModal() {
             <div className="space-y-3">
               <button
                 onClick={() => simulateAction('Calling Emergency Services (112)')}
-                className="w-full flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-danger-50 transition-colors text-left"
+                className="w-full flex items-center gap-3 p-4 rounded-3xl bg-white hover:bg-danger-50 transition-colors text-left shadow-soft"
               >
-                <div className="w-11 h-11 rounded-xl bg-danger-600 flex items-center justify-center text-white">
+                <div className="w-12 h-12 rounded-2xl bg-danger-500 flex items-center justify-center text-white">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-bold text-ink-900">Call Emergency Services</p>
+                  <p className="font-bold text-navy-900">Call Emergency Services</p>
                   <p className="text-sm text-ink-500">Dial 112 immediately</p>
                 </div>
               </button>
 
               <button
                 onClick={() => simulateAction('Calling Emergency Contact')}
-                className="w-full flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-primary-50 transition-colors text-left"
+                className="w-full flex items-center gap-3 p-4 rounded-3xl bg-white hover:bg-primary-50 transition-colors text-left shadow-soft"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary-600 flex items-center justify-center text-white">
+                <div className="w-12 h-12 rounded-2xl bg-primary-600 flex items-center justify-center text-white">
                   <User className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-bold text-ink-900">Call Emergency Contact</p>
+                  <p className="font-bold text-navy-900">Call Emergency Contact</p>
                   <p className="text-sm text-ink-500">Mom — +91 98XXX XXXXX</p>
                 </div>
               </button>
 
               <button
                 onClick={() => simulateAction('Location shared with contacts')}
-                className="w-full flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-accent-50 transition-colors text-left"
+                className="w-full flex items-center gap-3 p-4 rounded-3xl bg-white hover:bg-accent-50 transition-colors text-left shadow-soft"
               >
-                <div className="w-11 h-11 rounded-xl bg-accent-600 flex items-center justify-center text-white">
+                <div className="w-12 h-12 rounded-2xl bg-accent-500 flex items-center justify-center text-white">
                   <Share2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-bold text-ink-900">Share Current Location</p>
+                  <p className="font-bold text-navy-900">Share Current Location</p>
                   <p className="text-sm text-ink-500">Send to emergency contacts</p>
                 </div>
               </button>
